@@ -6,7 +6,10 @@
 #' @param name set name of Shiny app.
 #' @return A Shiny app file,logo pic and report Rmd files.
 #' @export
-generate_shiny_app <- function(dir = NULL,name = "shiny_app") {
+generate_shiny_app <- function(dir = NULL,
+                               name = "shiny_app",
+                               create_token=T
+                               ) {
 
   shiny_app_code <- "
 library(shiny)
@@ -595,15 +598,26 @@ output: pdf_document
     dir.create("www")
     file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
               paste0(getwd(),"/www"))
+    print(paste0())
+    if(create_token){
+      dropbox_token()
+    }
 
   }
   else{
-    writeLines(shiny_app_code, paste0(dir,"/",name,".R"))
-    writeLines(rmd_content1, paste0(dir,"/","report.Rmd"))
-    writeLines(rmd_content2, paste0(dir,"/","report2.Rmd"))
-    dir.create(paste0(dir,"/www"))
-    file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
-              paste0(dir,"/www"))
+    if(dir.exists(dir)){
+      writeLines(shiny_app_code, paste0(dir,"/",name,".R"))
+      writeLines(rmd_content1, paste0(dir,"/","report.Rmd"))
+      writeLines(rmd_content2, paste0(dir,"/","report2.Rmd"))
+      dir.create(paste0(dir,"/www"))
+      file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
+                paste0(dir,"/www"))
+        if(create_token){
+          dropbox_token(dir=dir)
+        }
+    }else{
+      warning("Directory or folder isn't exists")
+    }
   }
 }
 
