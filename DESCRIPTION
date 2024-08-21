@@ -1,12 +1,11 @@
 Package: WebTrials
 Type: Package
-Title: What the Package Does (Title Case)
+Title: 'WebTrials' Template Shiny Web For Clinical Trials
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Tanaphum Wichaita
+Maintainer: Tanaphum Wichaita <tana_jumbo@hotmail.com>
+Description: Create Template Shiny Web For Clinical Trials
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
