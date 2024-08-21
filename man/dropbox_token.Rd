@@ -2,8 +2,7 @@
 % Please edit documentation in R/dropbox_token.R
 \name{dropbox_token}
 \alias{dropbox_token}
-\title{generate dropbox token
-source form https://stackoverflow.com/questions/71393752/get-a-refresh-token-for-dropbox-api-using-rdrop2-and-drop-auth}
+\title{generate dropbox token}
 \usage{
 dropbox_token(
   new_user = FALSE,
@@ -23,6 +22,5 @@ dropbox_token(
 A token rds file.
 }
 \description{
-generate dropbox token
 source form https://stackoverflow.com/questions/71393752/get-a-refresh-token-for-dropbox-api-using-rdrop2-and-drop-auth
 }

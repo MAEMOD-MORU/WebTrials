@@ -1,6 +1,6 @@
-#' generate dropbox token
+#' @title generate dropbox token
 #'
-#' source form https://stackoverflow.com/questions/71393752/get-a-refresh-token-for-dropbox-api-using-rdrop2-and-drop-auth
+#' @description source form https://stackoverflow.com/questions/71393752/get-a-refresh-token-for-dropbox-api-using-rdrop2-and-drop-auth
 #'
 #' @param new_user if TRUE is means generate a new token
 #' @param dir set directory of token file.

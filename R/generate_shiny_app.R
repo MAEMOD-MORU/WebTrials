@@ -1,6 +1,6 @@
-#' Generate a basic Shiny app
+#' @title Generate Shiny app
 #'
-#' This function launches a simple Shiny app with a text input and output.
+#' @description This function launches a simple Shiny app with a text input and output.
 #'
 #' @param dir set directory of output files.
 #' @param name set name of Shiny app.

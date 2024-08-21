@@ -2,7 +2,7 @@
 % Please edit documentation in R/generate_shiny_app.R
 \name{generate_shiny_app}
 \alias{generate_shiny_app}
-\title{Generate a basic Shiny app}
+\title{Generate Shiny app}
 \usage{
 generate_shiny_app(dir = NULL, name = "shiny_app")
 }
