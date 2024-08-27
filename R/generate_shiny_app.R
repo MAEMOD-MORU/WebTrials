@@ -8,7 +8,8 @@
 #' @export
 generate_shiny_app <- function(dir = NULL,
                                name = "shiny_app",
-                               create_token=T
+                               create_token=T,
+                               login_page=T
                                ) {
 
   shiny_app_code <- "
@@ -529,6 +530,7 @@ server <- function(input, output, session){
 
 # run the app
 shinyApp(ui, server)
+
   "
   rmd_content1 <- "
 ---
@@ -589,6 +591,9 @@ output: pdf_document
 
 
   "
+  if(login==F){
+
+  }
 
 
   if(is.null(dir)){
