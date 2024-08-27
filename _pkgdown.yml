@@ -1,4 +1,11 @@
 url: ~
 template:
   bootstrap: 5
-
+  light-switch: true
+navbar:
+  title: "bayesplot"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Functions"
+      href: reference/index.html
