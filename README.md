@@ -12,3 +12,14 @@ if (!require("devtools")) {
 }
 devtools::install_github("MAEMOD-MORU/WebTrials", dependencies = TRUE, build_vignettes = FALSE)
 ```
+# Description: 
+WebTrials is an R package that helps you easily create Shiny web apps for randomizing participants in clinical trials. 
+#### Key Features:
+*	Pre-built Templates: Creating of pre-built Shiny app templates.
+*	User Authentication and Security: Supports user authentication and role-based access control to ensure that only authorized personnel can access (shinymanager)
+*	Deployment Flexibility: Facilitates easy deployment of the Shiny apps either locally, on a server, or via cloud services.
+#### Use Cases:
+*	Clinical Trial Coordination: Helps trial coordinators and statisticians set up and manage randomization processes with minimal programming knowledge.
+* Regulatory Compliance: Ensures that randomization procedures meet the necessary regulatory requirements through secure data handling and detailed audit trails.
+
+
