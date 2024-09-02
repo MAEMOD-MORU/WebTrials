@@ -12,7 +12,50 @@ generate_shiny_app <- function(dir = NULL,
                                login_page=T
                                ) {
 
-  shiny_app_code <- "
+  if(login_page==F){
+
+  }
+
+
+  if(is.null(dir)){
+    writeLines(shiny_app_code, paste0(name,".R"))
+    writeLines(rmd_content1, paste0("report.Rmd"))
+    writeLines(rmd_content2, paste0("report2.Rmd"))
+    dir.create("www")
+    # dir.create("dropbox_data")
+    file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
+              paste0(getwd(),"/www"))
+    file.copy(paste0(.libPaths()[1],"/WebTrials/dropbox_data"),
+              paste0(getwd()), recursive=TRUE)
+    print(paste0())
+    if(create_token){
+      dir.create("data")
+      dropbox_token()
+    }
+
+  }
+  else{
+    if(dir.exists(dir)){
+      writeLines(shiny_app_code, paste0(dir,"/",name,".R"))
+      writeLines(rmd_content1, paste0(dir,"/","report.Rmd"))
+      writeLines(rmd_content2, paste0(dir,"/","report2.Rmd"))
+      dir.create(paste0(dir,"/www"))
+      # dir.create("dropbox_data")
+      file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
+                paste0(dir,"/www"))
+      file.copy(paste0(.libPaths()[1],"/WebTrials/dropbox_data"),
+                paste0(dir), recursive=TRUE)
+        if(create_token){
+          dir.create(paste0(dir,"/data"))
+          dropbox_token(dir=dir)
+        }
+    }else{
+      warning("Directory or folder isn't exists")
+    }
+  }
+}
+
+shiny_app_code <- "
 library(shiny)
 library(shinymanager)
 library(rdrop2)
@@ -532,7 +575,7 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 
   "
-  rmd_content1 <- "
+rmd_content1 <- "
 ---
 title: \"Report\"
 author: 'Requested by: `r res_auth$user`'
@@ -561,7 +604,7 @@ output: pdf_document
 **Registered by:** `r values$exist.data$user`
   "
 
-  rmd_content2 <- "
+rmd_content2 <- "
   ---
 title: \"Report2\"
 author: 'Requested by: `r res_auth$user`'
@@ -591,38 +634,3 @@ output: pdf_document
 
 
   "
-  if(login==F){
-
-  }
-
-
-  if(is.null(dir)){
-    writeLines(shiny_app_code, paste0(name,".R"))
-    writeLines(rmd_content1, paste0("report.Rmd"))
-    writeLines(rmd_content2, paste0("report2.Rmd"))
-    dir.create("www")
-    file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
-              paste0(getwd(),"/www"))
-    print(paste0())
-    if(create_token){
-      dropbox_token()
-    }
-
-  }
-  else{
-    if(dir.exists(dir)){
-      writeLines(shiny_app_code, paste0(dir,"/",name,".R"))
-      writeLines(rmd_content1, paste0(dir,"/","report.Rmd"))
-      writeLines(rmd_content2, paste0(dir,"/","report2.Rmd"))
-      dir.create(paste0(dir,"/www"))
-      file.copy(paste0(.libPaths()[1],"/WebTrials/pic/logo.png"),
-                paste0(dir,"/www"))
-        if(create_token){
-          dropbox_token(dir=dir)
-        }
-    }else{
-      warning("Directory or folder isn't exists")
-    }
-  }
-}
-

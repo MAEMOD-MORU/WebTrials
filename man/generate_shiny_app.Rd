@@ -4,7 +4,12 @@
 \alias{generate_shiny_app}
 \title{Generate Shiny app}
 \usage{
-generate_shiny_app(dir = NULL, name = "shiny_app", create_token = T)
+generate_shiny_app(
+  dir = NULL,
+  name = "shiny_app",
+  create_token = T,
+  login_page = T
+)
 }
 \arguments{
 \item{dir}{set directory of output files.}

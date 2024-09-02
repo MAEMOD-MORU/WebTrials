@@ -1,0 +1,27 @@
+doc - stroy/Randomisation /what it do/how to use, diagram , step
+
+Description: RandTrialApp is an R package that simplifies the creation of Shiny web applications for randomization in clinical trials. The package provides a flexible framework for designing and deploying customized randomization tools that can be easily adapted to various trial designs, including simple, block, stratified, and adaptive randomization.
+
+Key Features:
+
+Pre-built Templates: Offers a selection of pre-built Shiny app templates tailored for different types of randomization methods, including simple randomization, block randomization, stratified randomization, and adaptive randomization.
+
+Customizable User Interface: Allows users to modify the appearance and functionality of the Shiny apps, including layout, input options, and output displays, to match the specific needs of their clinical trials.
+
+Randomization Algorithms: Implements robust and validated randomization algorithms that can be easily configured within the Shiny app to generate random allocation sequences based on trial-specific parameters.
+
+Data Management: Integrates with popular data management tools and formats, allowing for seamless storage and retrieval of randomization results, ensuring data integrity and compliance with regulatory standards.
+
+Real-Time Monitoring: Provides real-time monitoring and visualization of randomization progress, with options for exporting reports and audit trails to ensure transparency and reproducibility.
+
+User Authentication and Security: Supports user authentication and role-based access control to ensure that only authorized personnel can access and manage the randomization process.
+
+Deployment Flexibility: Facilitates easy deployment of the Shiny apps either locally, on a server, or via cloud services, ensuring that the randomization tool is accessible to all trial stakeholders.
+
+Use Cases:
+
+Clinical Trial Coordination: Helps trial coordinators and statisticians set up and manage randomization processes with minimal programming knowledge.
+
+Regulatory Compliance: Ensures that randomization procedures meet the necessary regulatory requirements through secure data handling and detailed audit trails.
+
+Adaptive Trial Designs: Supports the implementation of complex adaptive trial designs, allowing for real-time adjustments to randomization schemes based on interim analysis.

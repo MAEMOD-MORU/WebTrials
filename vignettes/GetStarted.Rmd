@@ -1,23 +1,44 @@
 ---
 title: 'Get Started'
-date: '`r Sys.Date()`'
 output:
   rmarkdown::html_vignette:
     toc: true
     toc_depth: 3
     vignette: >
-      %\VignetteIndexEntry{web-overview}
       %\VignetteEngine{knitr::rmarkdown}
       %\VignetteEncoding{UTF-8}
 ---
+
+### Into
+
+-   WebTrials is an R package that helps you easily create Shiny web apps for randomizing participants in clinical trials. It provides ready-made templates and tools to set up different types. -This package is designed for anyone involved in clinical trials who needs a straightforward way to manage participant randomization using a web app.
 
 ### Installation
 
 -   Install latest development version from GitHub (requires [devtools](https://github.com/hadley/devtools) package):
 
 ``` r
+TEST
 if (!require("devtools")) {
   install.packages("devtools")
 }
 devtools::install_github("MAEMOD-MORU/WebTrials", dependencies = TRUE, build_vignettes = FALSE)
 ```
+
+### Structure App
+
+![Structure App](image/Structure.png) The image shows the structure of files and folders created when the package or template is installed:
+
+### Folders:
+
+-   data: contains data files and token file used in the app.
+
+-   dropbox_data: contain data synchronized from Dropbox or used for cloud storage integration.
+
+-   www: Commonly used in Shiny apps to store static assets such as images, CSS files, and JavaScript files.
+
+### Files:
+
+-   report.Rmd and report2.Rmd: R Markdown files, likely used for generating dynamic reports based on the data or results from the app.
+
+-   shiny_app.R: The main R script for the Shiny app that includes the code to build and run the app interface. This structure provides a foundation for building a Shiny app that manages clinical trial randomization, supports data integration, and generates dynamic reports.

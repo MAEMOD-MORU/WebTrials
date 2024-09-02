@@ -6,6 +6,7 @@ Author: Tanaphum Wichaita
 Maintainer: Tanaphum Wichaita <tana_jumbo@hotmail.com>
 Description: Create Template Shiny Web For Clinical Trials
 License: MIT + file LICENSE
+URL: https://maemod-moru.github.io/WebTrials/
 Encoding: UTF-8
 LazyData: true
 Imports: 

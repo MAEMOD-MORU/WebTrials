@@ -1,0 +1,4 @@
+﻿site,screeningID,age,sex,symptomDay,vaccine,randomizationID,Treatment,Date,user
+b,10001,32,Male,2,1,1,Treatment - A,Wed Sep 15 07:30:21 2021,test2
+b,10002,23,Female,4,0,2,Treatment - B,Wed Sep 15 07:30:21 2021,test2
+b,10003,49,Other,0,1,3,Treatment - A,Wed Sep 15 07:30:21 2021,test2

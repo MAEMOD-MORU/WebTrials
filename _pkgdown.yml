@@ -1,4 +1,4 @@
-url: ~
+url: https://maemod-moru.github.io/WebTrials/
 template:
   bootstrap: 5
   light-switch: true
@@ -7,5 +7,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
+    - text: "GetStarted"
+      href: articles/GetStarted.html
     - text: "Functions"
       href: reference/index.html

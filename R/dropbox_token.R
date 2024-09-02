@@ -36,8 +36,14 @@ dropbox_token <- function (new_user = FALSE,dir = NULL,
       stop("something went wrong, try again")
     }
     if(is.null(dir)){
+      if(!dir.exists(paste0(getwd(),"/data"))){
+        dir.create(paste0(getwd(),"/data"))
+      }
       saveRDS(dropbox_token,"data/token.rds")
     }else{
+      if(!dir.exists(paste0(dir,"/data"))){
+        dir.create(paste0(dir,"/data"))
+      }
       saveRDS(dropbox_token,paste0(dir,"/data/token.rds"))
     }
 
