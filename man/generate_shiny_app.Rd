@@ -7,8 +7,8 @@
 generate_shiny_app(
   dir = NULL,
   name = "shiny_app",
-  create_token = T,
-  login_page = T
+  storage = "dropbox",
+  create_token = T
 )
 }
 \arguments{
