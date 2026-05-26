@@ -1,8 +1,0 @@
-^.*\.Rproj$
-^\.Rproj\.user$
-^\.httr-oauth$
-^LICENSE\.md$
-^test\.r$
-^_pkgdown\.yml$
-^docs$
-^pkgdown$
