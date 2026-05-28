@@ -15,6 +15,7 @@ library(DT)        # data tables              — install.packages("DT")
 
 source("user_management.R")
 source("user_management_ui.R")
+source("randomisation_generator.R")
 
 # ── Config ────────────────────────────────────────────────────────────────────
 tokenfile   <- 'data/droptoken.RDS'
@@ -145,7 +146,8 @@ dashboard_ui <- dashboardPage(
     sidebarMenu(
       menuItem("Randomisation Form", tabName = "rand_form",  icon = icon("clipboard-list")),
       menuItem("Dashboard",          tabName = "dashboard",  icon = icon("chart-bar")),
-      menuItem("User Management",    tabName = "user_mgmt",  icon = icon("users-gear"))
+      menuItem("User Management",    tabName = "user_mgmt",  icon = icon("users-gear")),
+      menuItem("Rand Generator",     tabName = "rand_gen",   icon = icon("dice"))
     )
   ),
   dashboardBody(
@@ -227,6 +229,11 @@ dashboard_ui <- dashboardPage(
       # ── User Management tab (admin only) ────────────────────────────────────
       tabItem(tabName = "user_mgmt",
         userMgmtUI("um")
+      ),
+
+      # ── Randomisation Generator tab (admin only) ──────────────────────────
+      tabItem(tabName = "rand_gen",
+        randGenUI("rg")
       )
     )
   )
@@ -259,6 +266,15 @@ server <- function(input, output, session) {
     userMgmtServer("um",
                    actor      = reactive(res_auth$user),
                    session_id = session_id_r)
+  })
+
+  # Randomisation Generator module (admin only)
+  observe({
+    req(is_admin())
+    randGenServer("rg",
+                  actor         = reactive(res_auth$user),
+                  drop_folder   = drop.folder,
+                  append_audit_fn = append_audit)
   })
 
   # Root UI switch
